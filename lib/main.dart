@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutterstate/block_kullanimi.dart';
 import 'package:flutterstate/firebaseauth_provider.dart';
+import 'package:flutterstate/flutter_bloc_paket_kullanimi.dart';
 import 'package:flutterstate/provider_package_kullanimi.dart';
 import 'package:flutterstate/sayac.dart';
+import 'package:flutterstate/stream_kullanimi.dart';
 import 'package:flutterstate/user_repository.dart';
 import 'package:provider/provider.dart';
 
@@ -17,6 +20,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => new UserRepository(),),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
@@ -85,6 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   .display1,
             ),
             RaisedButton(
+              color: Colors.yellow,
               child: Text("Provider Package Kullanımı"),
               onPressed: () {
                 Navigator.of(context)
@@ -92,10 +97,35 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             RaisedButton(
+              color: Colors.pink,
               child: Text("Provider Firebase Auth"),
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) => ProviderwithFirebaseAuth()));
+              },
+            ),
+            RaisedButton(
+              color: Colors.purple,
+              child: Text("Stream Kullanımı"),
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => StreamKullanimi()));
+              },
+            ),
+            RaisedButton(
+              color: Colors.green,
+              child: Text("Block Kullanımı"),
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => BlockKullanimi()));
+              },
+            ),
+            RaisedButton(
+              color: Colors.blue,
+              child: Text("Flutter Block Paket Kullanımı"),
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => FlutterBlockPaketKullanimi()));
               },
             ),
           ],
